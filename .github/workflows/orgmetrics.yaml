@@ -43,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Install ctags
-        run: Rscript -e "pkgstats::ctags_test(); pkgstats::install(); pkgstats::ctags_test()"
+        run: Rscript -e "pkgstats::ctags_install(); pkgstats::ctags_test()"
 
       - name: Orgmetrics deploy
         run: Rscript -e "options('rlib_message_verbosity'='verbose'); orgmetrics::orgmetrics_deploy_r_univ(url = 'https://github.com/remlapmot/remlapmot.r-universe.dev', aggregation_period = 365L)"
